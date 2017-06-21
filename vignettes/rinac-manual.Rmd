@@ -1,0 +1,35 @@
+---
+title: "rinac- Helper Functions for Analysis of iCinac(TM) Data in R"
+author: "Benjamin Schwetz"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{rinac- Helper Functions for Analysis of iCinac(TM) Data in R}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Purpose
+A package that provides easy-to-use tools to import, annotate and restructure data, exported from the iCinac software, in order to perform statistical analysis.
+
+# Installation
+```{r, eval=FALSE}
+install.packages("devtools")
+devtools::install_github("/benjaminschwetz/rinac")
+```
+
+# Functions
+
+## `import_cinac()`
+This function creates a *tidy* data frame from two files: an exported table from the iCinac and an annotation table. It makes use of the lower level functions: 
+* `read_cinac()`
+* `annotate_cinac()`
+
+## `find_extremes()`
+This function determines turn points in a series, using `pastecs::turnpoints()` and is compatible with `dplyr::filter()`
+
+## `multiplot()`
+An adaptation of the `multiplot` function found in the Cookbook for R
+
+## `fmt_dcimals()`
+A function to help formatting axis labels with `ggplot2`
